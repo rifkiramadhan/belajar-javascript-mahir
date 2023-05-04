@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Do While Loop</title>
+  </head>
+  <body>
+    <script>
+      // Lebih simple dari perulangan Do While
+      let counter = 1;
+      /*
+        Do While mengeksekusi terlebih dahulu kemudian terakhir di cek kondisinya
+        Jadi minimal sekali di ekseskusi
+      */
+      do {
+        document.writeln(`<p>Perulangan ke-${counter}</p>`);
+        counter++;
+      } while (counter <= 20);
+    </script>
+  </body>
+</html>
