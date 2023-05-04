@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scope</title>
+  </head>
+  <body>
+    <script>
+      // Global Scope
+      let counter = 0;
+
+      // Global Scope
+      function hitMe() {
+        // Local Scope
+        counter++;
+      }
+
+      // Global Scope
+      function other() {
+        // Local Scope
+      }
+
+      hitMe();
+
+      console.info(counter);
+
+      function first() {
+        // Local Scope First
+        let firstVariable = 'First';
+
+        function firstNested() {
+          console.info(firstVariable);
+
+          const firstNestedVariable = 'First Nested';
+        }
+
+        firstNested();
+
+        console.info(firstNestedVariable);
+      }
+
+      function second() {
+        let secondVariable = 'Second';
+
+        // Local Scope Tapi Milik Function first
+        // console.info(firstVariable); // Error
+      }
+
+      first();
+      second();
+
+      // Global Scope
+      //   console.info(firstVariable); // Error
+      //   console.info(secondVariable); // Error
+    </script>
+  </body>
+</html>
