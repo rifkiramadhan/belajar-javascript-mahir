@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kata Kunci this</title>
+  </head>
+  <body>
+    <script>
+      // This Mengacu Ke Window
+
+      // Contoh This Di Function
+      console.info(this);
+
+      function name1() {
+        console.info(this);
+      }
+      name1();
+
+      function name2() {
+        function inner() {
+          console.log(this);
+        }
+        inner();
+      }
+      name2();
+
+      // Contoh This Di Object Method
+      const person = {
+        name: 'Eko',
+        sayHello: function (value) {
+          // Mengacu ke person dengan nested function
+          console.info(`Helo ${value}, My Name is ${this.name}`);
+        },
+      };
+      person.sayHello('Budi');
+      person.sayHello('Joko');
+    </script>
+  </body>
+</html>
