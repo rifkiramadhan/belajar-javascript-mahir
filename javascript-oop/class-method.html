@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Method</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        constructor(name) {
+          this.name = name;
+          // Tidak disarankan (Karena ini di instance object nya)
+          //   this.sayHello = function (name) {
+          //     console.info(`Hello ${name}, My name is ${this.name}`);
+          //   };
+        }
+
+        sayHello(name) {
+          console.info(`Hello ${name}, My name is ${this.name}`);
+        }
+      }
+
+      const eko = new Person('Eko');
+      console.info(eko);
+      eko.sayHello('Joko');
+
+      const budi = new Person('Budi');
+      console.info(budi);
+      budi.sayHello('Joko');
+    </script>
+  </body>
+</html>

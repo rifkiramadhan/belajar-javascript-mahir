@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Super Constructor</title>
+  </head>
+  <body>
+    <script>
+      class Employee {
+        constructor(firstName) {
+          this.firstName = firstName;
+        }
+
+        sayHello(name) {
+          console.info(`Hello ${name}, My name is Employee ${this.firstName}`);
+        }
+      }
+
+      class Manager extends Employee {
+        // Saat membuat constructor di child nya
+        constructor(firstName, lastName) {
+          // Wajib memanggil super constructor nya meski constructornya tidak dibuat di parent nya
+          super(firstName);
+          this.lastName = lastName;
+        }
+
+        sayHello(name) {
+          console.info(
+            `Hello ${name}, My name is Manager ${this.firstName} ${this.lastName}`
+          );
+        }
+      }
+
+      const budi = new Employee('Budi');
+      budi.sayHello('Joko');
+
+      const eko = new Manager('Eko', 'Khannedy');
+      eko.sayHello('Joko');
+
+      console.info(budi);
+      console.info(eko);
+    </script>
+  </body>
+</html>
