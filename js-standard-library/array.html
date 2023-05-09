@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <script>
+      {
+        // Array Loop
+        const array = ['Eko', 'Kurniawan', 'Khannedy'];
+
+        array.forEach(function (value, index) {
+          console.info(`${index} ${value}`);
+        });
+
+        array.forEach((value, index) => console.info(`${index} ${value}`));
+
+        array.forEach((value, index) => console.info(value));
+      }
+
+      {
+        // Array Queue
+        const queue = [];
+
+        queue.push('Eko');
+        queue.push('Kurniawan');
+        queue.push('Khannedy');
+
+        console.info(queue.shift());
+        console.info(queue.shift());
+        console.info(queue.shift());
+        console.info(queue.shift());
+      }
+
+      {
+        // Array Stack
+        const stack = [];
+
+        stack.push('Eko');
+        stack.push('Kurniawan');
+        stack.push('Khannedy');
+
+        console.info(stack.pop());
+        console.info(stack.pop());
+        console.info(stack.pop());
+        console.info(stack.pop());
+      }
+
+      {
+        // Array Search
+        const source = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
+
+        console.info(source.find((value) => value > 3)); // 4
+        console.info(source.findIndex((value) => value > 3)); // 3
+        console.info(source.includes(7)); // false
+        console.info(source.indexOf(5)); // 4
+        console.info(source.lastIndexOf(5)); // 9
+      }
+
+      {
+        // Array Filter
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const ganjil = numbers.filter((value) => value % 2 === 1);
+        const genap = numbers.filter((value) => value % 2 === 0);
+
+        console.info(numbers);
+        console.info(ganjil);
+        console.info(genap);
+      }
+
+      {
+        // Array Transform
+        const names = ['Eko', 'Kurniawan', 'Khannedy'];
+        const namesUpper = names.map((value) => value.toUpperCase());
+        console.info(namesUpper);
+
+        const namesReduce = names.reduce(
+          (before, value) => before + ' ' + value
+        );
+        console.info(namesReduce);
+
+        // Kebalikannya
+        const namesRight = names.reduceRight(
+          (before, value) => before + ' ' + value
+        );
+        console.info(namesRight);
+
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const total = numbers.reduce((before, value) => before + value);
+        console.info(total);
+      }
+    </script>
+  </body>
+</html>
