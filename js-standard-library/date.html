@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date</title>
+  </head>
+  <body>
+    <script>
+      {
+        // Create Date
+        const date1 = new Date();
+        console.info(date1);
+
+        const date2 = new Date(2020, 10, 10);
+        console.info(date2);
+
+        // Thn, bln, tgl, jam, menit, detik, mildetik
+        const date3 = new Date(2020, 10, 10, 16, 15, 9, 123);
+        console.info(date3);
+
+        // Current Millis
+        const date4 = new Date(1683739312943);
+        console.info(date4);
+      }
+
+      {
+        // Epoch & Unix Timestamp
+        const date1 = new Date();
+        console.info(date1.getTime());
+
+        const date2 = new Date(2020, 10, 10);
+        console.info(date2.getTime());
+
+        // Thn, bln, tgl, jam, menit, detik, mildetik
+        const date3 = new Date(2020, 10, 10, 16, 15, 9, 123);
+        console.info(date3.getTime());
+
+        // Current Millis
+        const date4 = new Date(1683739312943);
+        console.info(date4.getTime());
+
+        console.info(Date.now());
+      }
+
+      {
+        // Date Parsing
+        const time = Date.parse('2020-10-10T08:45:45.123+07:00');
+        console.info(time);
+
+        const date = new Date(time);
+        console.info(date);
+      }
+
+      {
+        // Getter Dan Setter
+        const date = new Date();
+
+        console.info(date.getFullYear());
+        console.info(date.getMonth());
+        console.info(date.getDate());
+        console.info(date.getHours());
+        console.info(date.getMinutes());
+        console.info(date.getSeconds());
+        console.info(date.getMilliseconds());
+        console.info(date.getTimezoneOffset());
+      }
+    </script>
+  </body>
+</html>
