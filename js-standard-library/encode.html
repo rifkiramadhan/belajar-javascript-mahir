@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encode</title>
+  </head>
+  <body>
+    <script>
+      {
+        // Encode URI & Decode URI
+        const url = 'http://contoh.com/?name=Eko Kurniawan Khannedy';
+        console.info(url);
+
+        const encoded = encodeURI(url);
+        console.info(encoded);
+
+        const decoded = decodeURI(encoded);
+        console.info(decoded);
+      }
+
+      {
+        // Encode URI & Decode URI
+
+        // Query Parameter Value
+        const value = 'Eko&Kurniawan=Khannedy';
+
+        // URL
+        const url = 'http://contoh.com/?name=';
+        console.info(url + value);
+
+        const encoded = encodeURIComponent(value);
+        console.info(url + encoded);
+
+        const decoded = decodeURIComponent(encoded);
+        console.info(url + decoded);
+      }
+    </script>
+  </body>
+</html>
