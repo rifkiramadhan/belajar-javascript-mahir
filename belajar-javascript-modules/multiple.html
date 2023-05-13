@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiple</title>
+  </head>
+  <body>
+    <script type="module">
+      import { company, sum, Company } from './scripts/multiple.js';
+      import {
+        company as perusahaan,
+        sum as total,
+        Company as Perusahaan,
+      } from './scripts/multiple2.js';
+
+      console.info(company);
+      console.info(perusahaan);
+
+      console.info(sum(10, 10));
+      console.info(total(10, 10));
+
+      const a = new Company();
+      const b = new Perusahaan();
+    </script>
+  </body>
+</html>
