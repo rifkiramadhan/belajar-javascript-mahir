@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inner Text</title>
+  </head>
+  <body>
+    <p id="content">
+      <script>
+        // Dianggap text
+        console.info('Hello World');
+      </script>
+
+      <b>Eko Kurniawan</b> <i>Khannedy</i>
+    </p>
+
+    <script>
+      const content = document.getElementById('content');
+
+      // Ambil semua text yang ada di element tersebut
+      console.info(content.textContent);
+
+      // Bisa tau tag mana yang akan di render di website (selain tag script)
+      console.info(content.innerText);
+
+      // Ambil sema script beserta isinya yg ada di element tersebut
+      console.info(content.innerHTML);
+    </script>
+  </body>
+</html>

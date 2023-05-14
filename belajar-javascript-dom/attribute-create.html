@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attribute Create</title>
+  </head>
+  <img id="logo" alt="PZN LOGO" />
+
+  <body>
+    <script>
+      const logo = document.getElementById('logo');
+
+      //   const src = document.createAttribute('src');
+      //   src.value = 'https://www.programmerzamannow.com/img/pzn.png';
+      //   logo.setAttributeNode(src);
+
+      logo.setAttribute(
+        'src',
+        'https://www.programmerzamannow.com/img/pzn.png'
+      );
+    </script>
+  </body>
+</html>

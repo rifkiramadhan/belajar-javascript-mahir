@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Global</title>
+  </head>
+  <body>
+    <input id="clickMe" type="button" value="Click Me" />
+
+    <script>
+      const button = document.getElementById('clickMe');
+      // Global Event Handler hanya bisa sekali saja
+      // Jika ada dua function maka function yang pertama akan di timpa
+      button.onclick = function () {
+        button.setAttribute('value', 'You Already Click Me!');
+        console.log('Button di Click');
+      };
+      //   button.onclick = function () {
+      //     console.log('Button di Click');
+      //   };
+    </script>
+  </body>
+</html>
