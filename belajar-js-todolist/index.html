@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Todo List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./src/css/main.css"
+    />
+  </head>
+  <body>
+    <form name="todoForm">
+      <table>
+        <tbody>
+          <tr>
+            <td><label for="todo">Todo:</label></td>
+            <td><input type="text" name="todo" id="todo" /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="submit" value="Add" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+
+    <h1>Todo List</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Filter:</th>
+          <th><input type="text" name="search" id="search" /></th>
+        </tr>
+      </thead>
+
+      <tbody id="todolist">
+        <tr>
+          <td><input type="button" value="Done" /></td>
+          <td>Todo Description</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script src="./src/js/todo-list-complete.js"></script>
+  </body>
+</html>
