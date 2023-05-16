@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+  </head>
+  <body>
+    <table>
+      <tbody>
+        <tr>
+          <td>Id :</td>
+          <td id="id"></td>
+        </tr>
+        <tr>
+          <td>Name :</td>
+          <td id="name"></td>
+        </tr>
+        <tr>
+          <td>Price :</td>
+          <td id="price"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      const getProduct = (product) => {
+        return new Promise((resolve, reject) => {
+          const ajax = new XMLHttpRequest();
+
+          ajax.open('GET', `api/${product}.json`);
+
+          ajax.onload = () => {
+            if (ajax.status === 200) {
+              resolve(ajax.responseText);
+            } else {
+              reject(`Error Get Product Wit Response : ${ajax.status}`);
+            }
+          };
+
+          ajax.send();
+        });
+      };
+
+      getProduct('product')
+        // .then((response) => {
+        //   return JSON.parse(response);
+        // })
+        .then((response) => {
+          const json = JSON.parse(response);
+          document.getElementById('id').textContent = json.id;
+          document.getElementById('name').textContent = json.name;
+          document.getElementById('price').textContent = json.price;
+        })
+        .catch((error) => {
+          document.getElementById('id').textContent = error;
+          document.getElementById('name').textContent = error;
+          document.getElementById('price').textContent = error;
+        })
+        .finally(() => {
+          console.info('Finally');
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajax</title>
+  </head>
+  <body>
+    <h1 id="response"></h1>
+
+    <script>
+      const ajax = new XMLHttpRequest();
+      ajax.open('GET', 'api/hello.json');
+
+      ajax.addEventListener('load', function () {
+        const json = JSON.parse(ajax.responseText);
+
+        const header = document.getElementById('response');
+        header.textContent = json.response;
+      });
+
+      ajax.send();
+    </script>
+  </body>
+</html>
